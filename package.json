@@ -1,12 +1,13 @@
 {
-  "name": "example-project",
+  "name": "fend_webpack_example_project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js"
   },
-  "keywords": [],
+  "keywords": ["fend", "udacity","webpack example project" ],
+  "homepage": "https://github.com/MHundeloh/fend-webpack-content",
   "author": "",
   "license": "ISC",
   "description": "",
