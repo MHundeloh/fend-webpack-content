@@ -13,20 +13,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "handleSubmit": () => (/* binding */ handleSubmit)
 /* harmony export */ });
 function handleSubmit(event) {
-    event.preventDefault()
+  event.preventDefault(); // check what text was put into the form field
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+  var formText = document.getElementById('name').value;
+  checkForName(formText);
+  console.log("::: Form Submitted :::");
+  fetch('http://localhost:8080/test').then(function (res) {
+    return res.json();
+  }).then(function (res) {
+    document.getElementById('results').innerHTML = res.message;
+  });
 }
-
 
 
 
@@ -43,22 +40,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "checkForName": () => (/* binding */ checkForName)
 /* harmony export */ });
 function checkForName(inputText) {
-    console.log("::: Running checkForName :::", inputText);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ]
+  console.log("::: Running checkForName :::", inputText);
+  var names = ["Picard", "Janeway", "Kirk", "Archer", "Georgiou"];
 
-    if(names.includes(inputText)) {
-        alert("Welcome, Captain!")
-    }
+  if (names.includes(inputText)) {
+    alert("Welcome, Captain!");
+  }
 }
 
 
 
+/***/ }),
+
+/***/ "./src/client/file.png":
+/*!*****************************!*\
+  !*** ./src/client/file.png ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "31d6cfe0d16ae931b73c59d7e0c089c0.png");
 
 /***/ })
 
@@ -101,6 +105,18 @@ function checkForName(inputText) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -117,6 +133,29 @@ function checkForName(inputText) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -127,14 +166,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_nameChecker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/nameChecker */ "./src/client/js/nameChecker.js");
 /* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/formHandler */ "./src/client/js/formHandler.js");
+/* harmony import */ var _file_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./file.png */ "./src/client/file.png");
 
 
 
 console.log(_js_nameChecker__WEBPACK_IMPORTED_MODULE_0__.checkForName);
 console.log(_js_formHandler__WEBPACK_IMPORTED_MODULE_1__.handleSubmit);
-
-alert("I EXIST")
-
+alert("I EXIST");
 })();
 
 /******/ })()

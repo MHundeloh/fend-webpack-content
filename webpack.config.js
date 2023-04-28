@@ -12,10 +12,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: '/\.js$/',
+                test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: 'file-loader'
             }
-        ]
+        ],
     }
 }
