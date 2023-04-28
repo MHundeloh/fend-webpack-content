@@ -6,14 +6,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server/index.js"
   },
-  "keywords": ["fend", "udacity","webpack example project" ],
+  "keywords": [
+    "fend",
+    "udacity",
+    "webpack example project"
+  ],
   "homepage": "https://github.com/MHundeloh/fend-webpack-content",
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "express": "^4.17.1",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
   }
 }
